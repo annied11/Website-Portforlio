@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="200x200" href="./logos/favicons/clip/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logos/favicons/clip/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logos/favicons/clip/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Annie Dai</title>
 </head>
 
@@ -25,7 +29,7 @@
     </header>
     <section id="home" class="home">
         <div class="home-img">
-            <img src="pfps\image.jpg" alt="">
+            <img src="pfps\home.jpg" alt="">
         </div>
         <div class="home-content">
             <h1>Hi. I'm <span>Annie</span></h1>
@@ -40,26 +44,31 @@
                 <a href="https://www.behance.net/annied3/projects"><i class="fa-brands fa-behance"></i></a>
                 <a href="mailto:wad18@pitt.edu"><i class="fa-regular fa-envelope"></i></a>
             </div>
-            <a href="https://drive.google.com/file/d/1Cfk2AOUU7V4edEjaa9vYlDw2EB_Duylq/view?usp=sharing"
-                class="btn">Resume <i class="fa-solid fa-download"></i></a>
+                <a href="#" class="btn" onclick="openAndDownload();">
+                    Resume <i class="fa-solid fa-download"></i>
+                </a>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="about-text">
             <h1>About Me</h1>
-            <h2>Hi, I'm <span>Annie Dai</span></h2>
+            <h2>Hey, I'm <span>Annie</span></h2>
             <p>
-                My name is Annie and I am currently a junior at the University of Pittsburgh’s School of Computing and
+                I am currently a junior at the University of Pittsburgh’s School of Computing and
                 Information, majoring in computer science. I am interested in learning about technology and also have a
                 strong passion towards visual and performing arts. Hoping to combine my passions towards future
-                utilizations, I am seeking exciting opportunities that relate to the same.
+                utilizations, I am seeking exciting opportunities that relate to the same. <br><br><br>
+                
+                Looking ahead, I hope to find a role in a stable company with collaborative environments working in areas 
+                similar to machine learning, software, or even game dev. And of course, somewhere in a cozy space
+                with a hamster (or two) to keep me company :) 🐹
             </p>
         </div>
 
         <!-- Right side with image -->
         <div class="about-image">
-            <img src="pfps/e.png" alt="">
+            <img src="./pfps/about.png" alt="">
         </div>
     </section>
 
@@ -138,7 +147,7 @@
 
             <div class="project-card">
                 <div class="project-image-wrapper">
-                    <img src="Screenshot 2024-10-15 161748.png" alt="Stock Price Predictor" class="project-image">
+                    <img src="shroom.png" alt="Stock Price Predictor" class="project-image">
                     <a href="" target="" class="source-code-icon">
                         <i class="fa-brands fa-github"></i>
                     </a>
@@ -154,7 +163,7 @@
 
             <div class="project-card">
                 <div class="project-image-wrapper">
-                    <img src="logos\Screenshot 2024-10-15 142622.png" alt="MERN Chat App" class="project-image">
+                    <img src="logos\bestpittneighborhood.png" alt="MERN Chat App" class="project-image">
                     <a href="https://github.com/annied11/Group-30-Final-Project" target="_blank"
                         class="source-code-icon">
                         <i class="fa-brands fa-github"></i>
@@ -187,8 +196,8 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="css">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
                 alt="mysql">
-            <img src="logos\docker-icon-2048x2048-5mc7mvtn.png" alt="docker">
-            <img src="logos\Fabric_final_x256.webp" alt="microsoft fabric">
+            <img src="logos\docker-icon.png" alt="docker">
+            <img src="logos\Fabric.webp" alt="microsoft fabric">
             <img src="logos\java-14.svg" alt="java">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/anaconda/anaconda-original.svg"
                 alt="anaconda">
@@ -196,7 +205,7 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
                 alt="vs code">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="canva">
-            <img src="logos\langchain-dp1uxj2zn3752pntqnpfu2.webp" alt="langchain">
+            <img src="logos\langchain.webp" alt="langchain">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="c">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
                 alt="c++">
@@ -286,6 +295,16 @@
                 this.classList.add('active');
             });
         });
+    </script>
+
+    <script>
+        function openAndDownload() {
+            // Open Google Drive view link in a new tab
+            window.open('https://drive.google.com/file/d/1Cfk2AOUU7V4edEjaa9vYlDw2EB_Duylq/view?usp=sharing', '_blank');
+            
+            // Trigger download in the current tab
+            window.location.href = 'https://drive.google.com/uc?export=download&id=1Cfk2AOUU7V4edEjaa9vYlDw2EB_Duylq';
+        }
     </script>
 </body>
 

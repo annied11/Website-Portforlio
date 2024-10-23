@@ -284,7 +284,7 @@ span{
 }
 
 .about-image img {
-    width: 100%;
+    width: 80%;
     max-width: 500px;
     border-radius: 10px;
     margin-left: 100px;
@@ -292,6 +292,7 @@ span{
 
 .experience {
     background-color: black; 
+    padding-bottom: 5%;
     
 }
 
@@ -409,6 +410,7 @@ span{
 
 .projects {
     background-color: #101010; 
+    padding-bottom: 5%;
 }
 
 .projects-title p {
@@ -749,6 +751,7 @@ span{
     .about-image {
         display: none;
     }
+
 
     .timeline-items::before {
         left: 7px;
