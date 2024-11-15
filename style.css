@@ -284,7 +284,7 @@ span{
 }
 
 .about-image img {
-    width: 80%;
+    width: 66%;
     max-width: 500px;
     border-radius: 10px;
     margin-left: 100px;
@@ -293,7 +293,6 @@ span{
 .experience {
     background-color: black; 
     padding-bottom: 5%;
-    
 }
 
 .experience-title h1{
@@ -382,7 +381,7 @@ span{
 
 .timeline-content h4 {
     font-size: 16px;
-    color: white;
+    color: #BEBEBE;     
     margin: 0 0 10px;
     font-weight: 300;
     font-style: italic;
@@ -408,9 +407,11 @@ span{
     width: 50px;
 }
 
+/* Existing styles */
 .projects {
     background-color: #101010; 
-    padding-bottom: 5%;
+    padding-bottom: 3%;
+    min-height: max-content;
 }
 
 .projects-title p {
@@ -421,23 +422,39 @@ span{
     color: #C0C0C0;
 }
 
+.projects-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; 
+    scrollbar-width: none; 
+}
+
+.projects-container::-webkit-scrollbar {
+    display: none; /* Optional: Hide scrollbar in WebKit browsers */
+}
+
 .projects-cards {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap; 
     gap: 30px;
-    padding-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    flex: 0 0 auto; /* Prevent shrinking */
+    
 }
 
 .project-card {
     background-color: #1A1A1A;
     border-radius: 15px;
-    width: 340px; /* Adjust for better scaling */
+    width: 340px; /* Keep your existing width */
     padding: 20px;
     position: relative;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto; /* Prevent card from shrinking */
 }
 
 .project-card:hover {
@@ -445,7 +462,6 @@ span{
     box-shadow: 0 0 25px #b74b4b;
 }
 
-/* Image Wrapper */
 .project-image-wrapper {
     position: relative;
     width: 100%;
@@ -501,6 +517,36 @@ span{
 .source-code-icon:hover {
     background-color: rgba(0, 0, 0, 0.8);
     transform: scale(1.1);
+}
+
+.scroll-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.scroll-button.left {
+    left: 85px;
+}
+
+.scroll-button.right {
+    right: 85px;
 }
 
 /* Tags and Buttons */
@@ -674,11 +720,39 @@ span{
     section{
         padding: 6rem 3% 2rem;
     }
+    .about {
+        padding: 10rem 10rem;
+    }
+    
+    .about-text p {
+        max-width: 100%; 
+    }
+    .about-image img {
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        margin-left: 100px;
+    }
 
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+    
+    .timeline-content h4 {
+        font-size: 14px;
+    }
+    
+    .timeline-content p {
+        font-size: 14px;
+    }
+
+    .timeline-content {
+        padding: 25px 45px;
+    }
+    
 }
 
 @media(max-width:895px){
-
     html {
         font-size: 46%;
     }
@@ -739,7 +813,10 @@ span{
     .info-box-icon {
         flex-shrink: 0;
     }
-
+    
+    .timeline-items {
+        padding-right: 15px;
+    }
 }
 
 @media(max-width:550px){
@@ -752,6 +829,13 @@ span{
         display: none;
     }
 
+    .about {
+        padding: 10rem 8rem;
+    }
+    
+    .about-text p {
+        max-width: 100%; 
+    }
 
     .timeline-items::before {
         left: 7px;
@@ -825,6 +909,42 @@ span{
     .info-box p {
         font-size: 1.6rem; 
     }
+
+    .projects-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .projects-cards {
+        padding: 10;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        height: 375px;
+        max-width: 320px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .project-card .tags span {
+        font-size: 1.4rem;
+    }
+    
+    .source-code-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        top: 8px;
+        right: 8px;
+    }
+
+    .project-image-wrapper {
+        height: 180px;
+    }
+
     
 }
 

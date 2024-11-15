@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- <script src="script.js"></script> -->
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="200x200" href="./logos/favicons/clip/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./logos/favicons/clip/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./logos/favicons/clip/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="200x200" href="./logos/favicons/coinrain/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./logos/favicons/coinrain/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logos/favicons/coinrain/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Annie Dai</title>
 </head>
@@ -53,16 +57,20 @@
     <section id="about" class="about">
         <div class="about-text">
             <h1>About Me</h1>
-            <h2>Hey, I'm <span>Annie</span></h2>
+            <h2>
+                Hey, I'm <span>Annie</span> 
+                <img src="https://emojis.slackmojis.com/emojis/images/1643514596/5999/meow_party.gif?1643514596" width="25" alt="meow party gif"/>
+            </h2>
             <p>
                 I am currently a junior at the University of Pittsburgh’s School of Computing and
                 Information, majoring in computer science. I am interested in learning about technology and also have a
                 strong passion towards visual and performing arts. Hoping to combine my passions towards future
-                utilizations, I am seeking exciting opportunities that relate to the same. <br><br><br>
+                utilizations, I am seeking exciting opportunities that relate to the same. <br><br>
                 
                 Looking ahead, I hope to find a role in a stable company with collaborative environments working in areas 
                 similar to machine learning, software, or even game dev. And of course, somewhere in a cozy space
-                with a hamster (or two) to keep me company :) 🐹
+                with a hamster (or two) to keep me company
+                <img src="https://emojis.slackmojis.com/emojis/images/1710459928/90996/hamster1-e.png" alt="hamster1-e emoji" width="25" style="vertical-align: middle;"/>
             </p>
         </div>
 
@@ -79,10 +87,20 @@
         <div class="timeline-items">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3><span style="color: #A8A8A8;">(Incoming)</span> Software Engineer Intern II</h3>
+                    <h4>Walmart Global Tech @ Sunnyvale, CA</h4>
+                    <p>Impact in progress—stay tuned.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="timeline-date">2024</div>
                 <div class="timeline-content">
                     <h3>Software Engineer Intern</h3>
-                    <h4>Cloudwise</h4>
+                    <h4>Cloudwise @ Beijing, CN</h4>
                     <p>Developed log analysis algorithms using LangChain and incorporating GPT-4 API, improving the log
                         data pipeline and automating troubleshooting processes.</p>
                 </div>
@@ -93,7 +111,7 @@
                 <div class="timeline-date">2023</div>
                 <div class="timeline-content">
                     <h3>Research Assistant</h3>
-                    <h4>University of Pittsburgh Department of Bioinformatics, PA</h4>
+                    <h4>University of Pittsburgh Department of Bioinformatics</h4>
                     <p>Analyzed and processed single-cell RNA data, optimizing quality control pipelines and evaluating
                         dynamic responses to ICI across multiple cancer types.</p>
                 </div>
@@ -104,7 +122,7 @@
                 <div class="timeline-date">2022</div>
                 <div class="timeline-content">
                     <h3>Graphic Designer</h3>
-                    <h4>Dear Asian Youth DE</h4>
+                    <h4>Dear Asian Youth @ New Castle County, DE</h4>
                     <p>Designed branded layouts, templates, and product prototypes, while increasing outreach and
                         engagement, helping the organization grow its social media presence.</p>
                 </div>
@@ -115,7 +133,7 @@
                 <div class="timeline-date">2020</div>
                 <div class="timeline-content">
                     <h3>Teaching Assistant</h3>
-                    <h4>Chunhui Chinese School, DE</h4>
+                    <h4>Chunhui Chinese School @ Hockessin, DE</h4>
                     <p>Assisted with exam proctoring, grading, and classroom support while contributing over 100
                         volunteer hours and served attendees at an annual Chinese festival.</p>
                 </div>
@@ -126,61 +144,107 @@
     <section id="projects" class="projects">
         <div class="projects-title">
             <h1>Projects</h1>
-            <p>Some projects that showcases my skills and experience through real-world examples of my work!</p>
+            <p>Some projects that showcase my skills and experience through real-world examples of my work!</p>
         </div>
-        <div class="projects-cards">
-            <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="logos\skincarebad.png" alt="Stock Price Predictor" class="project-image">
-                    <a href="https://github.com/annied11/sheinnovateswebsite" target="_blank" class="source-code-icon">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-                <h2>SkinCareBad</h2>
-                <p>SheInnovates 2023: A concise, transparent, and straight forward website that allows you to become your own dermatologist.</p>
+    
+        <div class="projects-container">
+            <!-- <button class="scroll-button left" id="scrollLeft">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button> -->
+            
+            <div class="projects-cards" id="projectsCards">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="logos/shroom.png" alt="Shroom" class="project-image">
+                        <a href="https://github.com/annied11/Frostwood" class="source-code-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h2>Frostwood</h2>
+                    <p>A 2D platformer game incorporating original designs and gameplay mechanics, developed from scratch using Unity.</p>
                     <p class="tags">
-                        <span class="orange-gradient">#HTML</span>
+                        <span class="teal-gradient">#C#</span>
+                        <span class="pink-gradient">#Unity</span>
+                        <span class="lime-gradient">#Procreate</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="logos/Study Plan Generator.png" alt="Microsoft Fabric" class="project-image">
+                        <a href="https://github.com/Cyl200215/Microsoft_Fabric_Hackthon" class="source-code-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h2>ScholarSync</h2>
+                    <p>Microsoft Fabric & AI Learning Hackathon 2024: Empowering every student with AI-driven, personalized learning paths tailored to their unique journey.</p>
+                    <p class="tags">
+                        <span class="teal-gradient">#Flask</span>
+                        <span class="green-gradient">#MicrosoftFabric</span>
+                        <span class="red-gradient">#ModelTraining</span>
+                        <span class="yellow-gradient">#Python</span>
                         <span class="blue-gradient">#CSS</span>
+                        <span class="orange-gradient">#HTML</span>
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="logos/bestpittneighborhood.png" alt="Best Pittsburgh Neighborhood" class="project-image">
+                        <a href="https://github.com/annied11/Group-30-Final-Project" target="_blank" class="source-code-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h2>Best Pittsburgh Neighborhood</h2>
+                    <p>Analysis of Pittsburgh's neighborhoods using metrics like crime rates, health statistics, and education enrollment.</p>
+                    <p class="tags">
+                        <span class="orange-gradient">#Jupyter</span>
+                        <span class="light-blue-gradient">#Pandas</span>
+                        <span class="yellow-gradient">#Python</span>
+                        <span class="purple-gradient">#NumPy</span>
+                    </p>
+                </div>
+    
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="logos/scb.jpg" alt="SkinCareBad" class="project-image">
+                        <a href="https://github.com/annied11/sheinnovateswebsite" target="_blank" class="source-code-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h2>SkinCareBad</h2>
+                    <p>SheInnovates 2023: A straightforward website that helps you become your own dermatologist.</p>
+                    <p class="tags">
+                        <span class="blue-gradient">#CSS</span>
+                        <span class="orange-gradient">#HTML</span>
                         <span class="yellow-gradient">#JavaScript</span>
                     </p>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="shroom.png" alt="Stock Price Predictor" class="project-image">
-                    <a href="" target="" class="source-code-icon">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
                 </div>
-                <h2>Shroom</h2>
-                <p>2D platformer developed entirely from scratch using Unity. Incorporating original designs, artwork, and gameplay mechanics.</p>
+
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="logos/music-note.png" alt="Microsoft Fabric" class="project-image">
+                        <a href="#" class="source-code-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    <h2>SoulSonic</h2>
+                    <p>An app that interprets a user's emotions to deliver personalized music recommendations, tailoring selections to match their current mood/emotional state.</p>
                     <p class="tags">
-                        <span class="pink-gradient">#Unity</span>
-                        <span class="teal-gradient">#C++</span>
+                        <span class="blue-gradient">#Flutter</span>
+                        <span class="light-blue-gradient">#React.js</span>
+                        <span class="orange-gradient">#HuggingFace</span>
                         <span class="grey-gradient">#InProgress</span>
                     </p>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image-wrapper">
-                    <img src="logos\bestpittneighborhood.png" alt="MERN Chat App" class="project-image">
-                    <a href="https://github.com/annied11/Group-30-Final-Project" target="_blank"
-                        class="source-code-icon">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
                 </div>
-                <h2>Best Pittsburgh Neighborhood</h2>
-                <p>Analyzation of Pittsburgh's neighborhoods, conducted using key metrics such as crime rates, health statistics, property data, and education enrollment.
-                </p>
-                <p class="tags">
-                    <span class="yellow-gradient">#Python</span>
-                    <span class="orange-gradient">#Jupyter</span>
-                    <span class="light-blue-gradient">#Pandas</span>
-                    <span class="purple-gradient">#NumPy</span>
-                </p>
             </div>
+    
+            <!-- <button class="scroll-button right" id="scrollRight">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button> -->
         </div>
     </section>
+    
 
     <section id="skills" class="skills">
         <div class="skills-title">
@@ -218,6 +282,7 @@
                 alt="ps">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg"
                 alt="selenium">
+            
         </div>
     </section>
 
@@ -299,13 +364,27 @@
 
     <script>
         function openAndDownload() {
-            // Open Google Drive view link in a new tab
             window.open('https://drive.google.com/file/d/1Cfk2AOUU7V4edEjaa9vYlDw2EB_Duylq/view?usp=sharing', '_blank');
-            
-            // Trigger download in the current tab
             window.location.href = 'https://drive.google.com/uc?export=download&id=1Cfk2AOUU7V4edEjaa9vYlDw2EB_Duylq';
         }
+    </script>    
+
+    <script>
+        document.getElementById('scrollLeft').addEventListener('click', function() {
+            document.getElementById('projectsCards').scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+    
+        document.getElementById('scrollRight').addEventListener('click', function() {
+            document.getElementById('projectsCards').scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
     </script>
+    
 </body>
 
 </html>
