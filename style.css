@@ -609,7 +609,7 @@ span{
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 100px 300px;
+    margin: 100px 200px;
 }
 
 .skills-icons img {
@@ -702,11 +702,16 @@ span{
     html {
         font-size: 55%;
     }
+
+    .skills-icons {
+        gap: 27px;
+        margin: 100px 70px;
+    }
 }
 
 @media (max-width: 1000px){
     html {
-        font-size: 50%;
+        font-size: 55%;
     }
 
     .home{
@@ -748,6 +753,17 @@ span{
 
     .timeline-content {
         padding: 25px 45px;
+    }
+
+    .skills-icons {
+        gap: 27px;
+        margin: 100px 90px;
+    }
+
+    .info-box p {
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: anywhere;
     }
     
 }
