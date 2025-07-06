@@ -621,7 +621,8 @@ span{
 .skills-icons img[alt="latex"],
 .skills-icons img[alt="scikitlearn"],
 .skills-icons img[alt="flask"],
-.skills-icons img[alt="langchain"] {
+.skills-icons img[alt="langchain"],
+.skills-icons img[alt="apache kafka"] {
     background-color: #F5F5F5;
     padding: 10px;
     border-radius: 10px;
